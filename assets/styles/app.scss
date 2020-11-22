@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import "~bootstrap/scss/bootstrap";
+
+
+$primary-color: #0F4C81;
+$secondary-color: #C74501;
+$light: #EBE2DD;
+$dark: #0e1318;
+
+
+body {
+  padding-top: 140px;
+  font-family: 'Roboto', sans-serif;
+  background-color: $dark;
+
+}
+
+.navcompany {
+  font-family: 'Shadows Into Light', cursive;
+  color: $light;
+  font-size: 2rem;
+}
+
+.navhome {
+  font-family: 'Pathway Gothic One', cursive;
+  color: $light;
+  font-size: 1.5rem;
+}
+
+hover.navhome  {
+  color: $light;
+
+}
+
+.navigation {
+  font-family: 'Pathway Gothic One', cursive;
+  background-color: $primary-color;
+  color: $light;
+}
+
+
+h1 {
+  color: $secondary-color;
+  font-family: 'Pathway Gothic One', cursive;
+}
+
