@@ -1,0 +1,4 @@
+ 2115  symfony console make:entity
+ 2118  symfony console make:migration
+ 2121  symfony console doctrine:migrations:migrate
+voili <3
