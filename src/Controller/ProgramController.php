@@ -9,6 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProgramController extends AbstractController
 {
     /**
+
      * @Route("/programs/", name="program_index")
      */
     public function index(): Response
@@ -17,6 +18,18 @@ class ProgramController extends AbstractController
             'website' => 'Wild Séries',
         ]);
     }
+
+    /**
+     * Correspond à la route /programs/ et au name "program_show"
+     * @Route("/{id}/", methods={"GET"},requirements={"id"="\d+"}, name="show")
+     * @param int $id
+     * @return Response
+     */
+    public function show(int $id): Response
+    {
+        return $this->render('program/show.html.twig', ['id' => $id]);
+    }
+
 }
 
 
