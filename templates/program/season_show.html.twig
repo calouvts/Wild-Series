@@ -11,12 +11,12 @@
             <p>Catégorie : {{ program.category.name }}</p>
             {% for season in program.seasons %}
 
-                    <div class="media-body">
-                        <h1 class="mt-0">SAISON {{ season.number }}</h1>
-                        <p>{{ season.year }}</p>
-                        <p>{{ season.description }}</p>
-                     <a href="">Voir le détail</a>
-                    </div>
+                <div class="media-body">
+                    <h1 class="mt-0"> SAISON {{ season.number }}</h1>
+                    <p>{{ season.year }}</p>
+                    <p>{{ season.description }}</p>
+                    <a href="">Voir le détail</a>
+                </div>
 
             {% else %}
                 Aucune information sur la saison

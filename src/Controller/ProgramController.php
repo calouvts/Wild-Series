@@ -2,6 +2,7 @@
 // src/Controller/ProgramController.php
 namespace App\Controller;
 
+use App\Entity\Category;
 use App\Entity\Program;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -50,7 +51,29 @@ class ProgramController extends AbstractController
             'program' => $program,
         ]);
     }
+a revoir
 
+    public function showSeason(int $programId, int $seasonId): Response
+    {
+        $program = $this->getDoctrine()
+            ->getRepository(Program::class)
+            ->findOneBy(['id' => $programId]);
+
+        $seasons = $this->getDoctrine()
+            ->getRepository(Season::class)
+            ->findBy(['program' => $programId]);
+
+        if (!$seasons) {
+            throw $this->createNotFoundException(
+                'No season with ' . $seasonId . ' .'
+            );
+        }
+
+        return $this->render('program/season_show.html.twig', [
+            'program' => $program,
+            'season' => $seasons,
+        ]);
+    }
 }
 
 
