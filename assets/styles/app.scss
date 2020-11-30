@@ -6,6 +6,7 @@
 
 $primary-color: #0F4C81;
 $secondary-color: #C74501;
+
 $light: #EBE2DD;
 $dark: #0e1318;
 
@@ -15,6 +16,7 @@ body {
   font-family: 'Roboto', sans-serif;
   background-color: $dark;
   color: $light;
+
 
 
 }
@@ -42,9 +44,7 @@ hover.navhome  {
   color: $light;
 }
 
-
 h1 {
   color: $secondary-color;
   font-family: 'Pathway Gothic One', cursive;
 }
-
