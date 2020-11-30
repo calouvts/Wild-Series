@@ -51,7 +51,7 @@ class ProgramController extends AbstractController
             'program' => $program,
         ]);
     }
-a revoir
+
 
     public function showSeason(int $programId, int $seasonId): Response
     {
