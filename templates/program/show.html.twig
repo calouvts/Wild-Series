@@ -9,13 +9,13 @@
             <h1 class="mt-0">{{ program.title }}</h1>
             <p>{{ program.summary }}</p>
             <p>Catégorie : {{ program.category.name }}</p>
-            {% for season in program.seasons %}
+            {% for season in seasons %}
 
                     <div class="media-body">
                         <h1 class="mt-0">SAISON {{ season.number }}</h1>
                         <p>{{ season.year }}</p>
                         <p>{{ season.description }}</p>
-                     <a href="">Voir le détail</a>
+                     <a href="seasons/{{ season.id }}">Voir le détail</a>
                     </div>
 
             {% else %}
