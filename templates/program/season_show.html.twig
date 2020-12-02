@@ -6,17 +6,16 @@
     <div class="media">
         <img class="align-self-start mr-3" src="{{program.poster}}" alt="{{ program.title }} poster">
         <div class="media-body">
-            <h1 class="mt-0">{{ program.title }}</h1>
+            <h1 class="mt-0"><a href="../../">{{ program.title }}</a> (season {{  season.number }} )</h1>
             <p>{{ program.summary }}</p>
             <p>Catégorie : {{ program.category.name }}</p>
-            {% for season in seasons %}
+            {% for episode in episodes %}
 
-                    <div class="media-body">
-                        <h1 class="mt-0">SAISON {{ season.number }}</h1>
-                        <p>{{ season.year }}</p>
-                        <p>{{ season.description }}</p>
-                     <a href="seasons/{{ season.id }}">Voir le détail</a>
-                    </div>
+                <div class="media-body">
+                    <h1 class="mt-0"> Episode {{ episode.number }} : {{ episode.title }}</h1>
+
+                    <p>Synopsis: {{ episode.synopsis }}</p>
+                </div>
 
             {% else %}
                 Aucune information sur la saison
