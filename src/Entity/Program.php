@@ -8,7 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Component\Validator\Constraints\NotEqualTo;
+
 
 
 /**
@@ -28,11 +28,11 @@ class Program
     private $id;
 
     /**
-     * @Assert\NotEqualTo("plus belle la vie")
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank(message ="champ à compléter")
-      *@Assert\Length(max="255", maxMessage="Le titre saisie {{ value }} est trop long, il ne devrait pas dépasser {{ limit }} caractères")
+     * @Assert\Length(max="255", maxMessage="Le programme saisi {{ value }} est trop longue, il ne devrait pas dépasser {{ limit }} caractères")
      */
+
     private $title;
 
     /**
@@ -43,8 +43,7 @@ class Program
     private $summary;
 
     /**
-     * @Assert\NotBlank(message ="champ à compléter")
-     * @Assert\Length(max="255", maxMessage="Le chemin { value }} est trop long, il ne devrait pas dépasser {{ limit }} caractères")
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $poster;
 
