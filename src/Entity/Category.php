@@ -4,7 +4,7 @@ namespace App\Entity;
 
 use App\Repository\CategoryRepository;
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
 
 
 /**
@@ -21,7 +21,10 @@ class Category
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank(message ="champ à compléter")
+     * @Assert\Length(max="100", maxMessage="La catégorie saisie {{ value }} est trop longue, elle ne devrait pas dépasser {{ limit }} caractères")
      */
+
     private $name;
 
     public function getId(): ?int
