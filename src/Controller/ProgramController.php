@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use App\Form\ProgramType;
+use App\Service\Slugify;
 
 /**
  * @Route("/programs", name="program_")
@@ -34,17 +35,17 @@ class ProgramController extends AbstractController
             ['programs' => $programs]
         );
     }
-
-    /**
+     /**
      * The controller for the program add form
      * Display the form or deal with it
      *
      * @Route("/new", name="new")
      */
-    public function new(Request $request) : Response
+    public function new(Request $request, Slugify $slugify) : Response
     {
         // Create a new progrma Object
         $program= new Program();
+
         // Create the associated Form
         $form = $this->createForm(ProgramType::class, $program);
         // Get data from HTTP request
@@ -54,6 +55,8 @@ class ProgramController extends AbstractController
             // Deal with the submitted data
             // Get the Entity Manager
             $entityManager = $this->getDoctrine()->getManager();
+            $slug = $slugify->generate($program->getTitle());
+            $program->setSlug($slug);
             // Persist Program Object
             $entityManager->persist($program);
             // Flush the persisted object
@@ -66,13 +69,12 @@ class ProgramController extends AbstractController
     }
     /**
      * Correspond à la route /programs/ et au name "program_show"
-     * @Route("/{id<^[0-9]+$>}/", methods={"GET"},requirements={"id"="\d+"}, name="show")
+     * @Route("/{slug<^[a-z\-]+$>}/", methods={"GET"},requirements={"slug"="[a-z\-]+"}, name="show")
      * @param int $id
      * @return Response
      */
-    public function show(Program $program): Response
+    public function show(Program $program): onse
     {
-
         return $this->render('program/show.html.twig', [
             'program' => $program,
             'seasons' => $program->getSeasons(),
