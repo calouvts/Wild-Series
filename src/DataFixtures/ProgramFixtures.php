@@ -43,7 +43,11 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
 
     ];
 
+    private Slugify $slugify;
+    public function __construct(Slugify $slugify) {
+        $this->slugify = $slugify;
 
+    }
 
     public function getDependencies()
     {
@@ -57,6 +61,8 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
             $program = new Program();
             $program->setTitle($title);
             $program->setSummary($data['summary']);
+            // setSlug ... appeler $this->slugify->generate($title)
+
             $program->setCategory($this->getReference('category_0'));
             $manager->persist($program);
             $this->addReference('program_' . $i, $program);
