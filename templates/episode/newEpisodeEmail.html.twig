@@ -1,0 +1,23 @@
+{% extends 'layoutEmail.html.twig' %}
+{% block title %}Nouvelle série{% endblock %}
+
+{% block body %}
+<body style="background-color:#0e1318;">
+
+<h1 style="text-align: center;
+    padding-top: 24px;
+    font-weight: 700;
+    color: #EBE2DD;">Un nouvel épisode {{ episode.title}} de votre série  {{ episode.season.program.title }} est disponible sur votre vidéothèque</h1>
+
+
+
+<p style="color: #EBE2DD;">Résumé : {{episode.synopsis }}</p>>
+
+
+<a href="http://127.0.0.1:8000/episode/{{ episode.slug }}" style="color: #EBE2DD;">
+    C'est par ici!
+</a>
+</body>
+
+{% endblock %}
+

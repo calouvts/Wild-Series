@@ -1,0 +1,23 @@
+{% extends 'layoutEmail.html.twig' %}
+{% block title %}Nouvelle série{% endblock %}
+
+{% block body %}
+<body style="background-color:#0e1318;">
+
+<h1 style="text-align: center;
+    padding-top: 24px;
+    font-weight: 700;
+    color: #EBE2DD;">Une nouvelle série {{ program.title }} vient d'être ajoutée à la vidéothèque</h1>
+
+<p style="color: #EBE2DD;">Bonjour viens découvrir  {{ program.title }} sur Wild Series</p>
+
+<p style="color: #EBE2DD;">Synopsis: {{program.summary }}</p>>
+
+
+<a href="http://127.0.0.1:8000/programs/{{ program.slug }}" style="color: #EBE2DD;">
+    C'est par ici!
+</a>
+</body>
+
+{% endblock %}
+
