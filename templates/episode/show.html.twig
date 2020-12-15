@@ -5,6 +5,7 @@
 {% block body %}
     <h1>Episode</h1>
 
+
     <table class="table">
         <tbody class = "seasontext">
             <tr>
@@ -31,4 +32,19 @@
     <a href="edit">edit</a>
 
     {{ include('episode/_delete_form.html.twig') }}
+
+    <h3> Commentaires : </h3>
+    <ul>
+        {% for comment in episode.comments %}
+            <li>De : {{ comment.author.email }} <br>
+                Note : {{ comment.rate }} <br>
+                Commentaire : {{ comment.comment }}
+            </li>
+        {% endfor %}
+    </ul>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <h3>Ajouter un commentaire</h3>
+            {{ include('episode/_form.html.twig') }}
+    {% endif %}
+
 {% endblock %}

@@ -128,36 +128,6 @@ class User implements UserInterface
     /**
      * @return Collection|Comment[]
      */
-    public function getEpisode(): Collection
-    {
-        return $this->episode;
-    }
-
-    public function addEpisode(Comment $episode): self
-    {
-        if (!$this->episode->contains($episode)) {
-            $this->episode[] = $episode;
-            $episode->setAuthor($this);
-        }
-
-        return $this;
-    }
-
-    public function removeEpisode(Comment $episode): self
-    {
-        if ($this->episode->removeElement($episode)) {
-            // set the owning side to null (unless already changed)
-            if ($episode->getAuthor() === $this) {
-                $episode->setAuthor(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Comment[]
-     */
     public function getComment(): Collection
     {
         return $this->comment;

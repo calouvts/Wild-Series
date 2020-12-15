@@ -12,11 +12,12 @@ class EpisodeType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-
-         $builder
-             ->add('comment', TextareaType::class)
-             ->add('rate', IntegerType::class)
-         ;
+        $builder
+            ->add('title')
+            ->add('number')
+            ->add('synopsis')
+            ->add('season', null, ['choice_label' => 'number'])
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
