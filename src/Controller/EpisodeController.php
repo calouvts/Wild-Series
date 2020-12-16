@@ -71,8 +71,7 @@ class EpisodeController extends AbstractController
         $comment = new Comment();
         $form = $this->createForm(CommentType::class, $comment);
         $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) { /* tester si IS_FULLY_AUTHENTICATED */
             $entityManager = $this->getDoctrine()->getManager();
             $comment->setEpisode($episode);
             $comment->setAuthor($this->getUser());
