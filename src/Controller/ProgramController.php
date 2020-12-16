@@ -2,19 +2,21 @@
 // src/Controller/ProgramController.php
 namespace App\Controller;
 
-use App\Entity\Category;
+use App\Entity\Comment;
+use App\Entity\Episode;
 use App\Entity\Program;
 use App\Entity\Season;
-use App\Entity\Episode;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\Email;
-use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\Request;
+use App\Form\CommentType;
 use App\Form\ProgramType;
 use App\Service\Slugify;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
+use Symfony\Component\Routing\Annotation\Route;
+
 
 
 /**
@@ -123,8 +125,9 @@ class ProgramController extends AbstractController
      */
 
 
-    public function showEpisode(Program $program, Season $season, Episode $episode): Response
+    public function showEpisode(Program $program, Season $season, Episode $episode, Request $request): Response
     {
+
         return $this->render('program/episode_show.html.twig', [
             'program' => $program,
             'season' => $season,
