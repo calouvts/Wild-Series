@@ -13,7 +13,8 @@
 
                 <div class="media-body">
                     <h1 class="mt-0"> Episode {{ episode.number }} : {{ episode.title }}</h1>
-                    <a href="episodes/{{ episode.id }}">Voir le détail</a>
+
+                    <a href="{{ path('episode_show', {'slug': episode.slug}) }}">voir le détail</a>
                     <p>Synopsis: {{ episode.synopsis }}</p>
                 </div>
 

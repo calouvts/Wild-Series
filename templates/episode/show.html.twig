@@ -39,12 +39,22 @@
             <li>De : {{ comment.author.email }} <br>
                 Note : {{ comment.rate }} <br>
                 Commentaire : {{ comment.comment }}
+
+                {% if is_granted('ROLE_ADMIN') or (app.user == comment.author) %}
+                <form method="post" action="{{ path('episode_comment_delete', {'slug': episode.slug, 'id' : comment.id}) }}" onsubmit="return confirm('Are you sure you want to delete this comment?');">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ comment.id) }}">
+                    <button class="btn btn-dark">Delete</button>
+                </form>
+                {% endif %}
+
             </li>
         {% endfor %}
     </ul>
-    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    {% if is_granted('ROLE_CONTRIBUTOR') %}
             <h3>Ajouter un commentaire</h3>
             {{ include('episode/_form.html.twig') }}
     {% endif %}
+
 
 {% endblock %}

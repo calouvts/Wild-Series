@@ -37,7 +37,12 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/programs/new, roles: ROLE_CONTRIBUTOR }
+        - { path: ^/programs/.+/edit, roles: ROLE_CONTRIBUTOR }
 
 
     enable_authenticator_manager: true
     # ...
+    role_hierarchy:
+        ROLE_CONTRIBUTOR: ROLE_USER
+        ROLE_ADMIN: ROLE_CONTRIBUTOR

@@ -14,6 +14,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 /**
  * @Route("/episode")
@@ -112,6 +113,20 @@ class EpisodeController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/{slug}/commentdelete/{id}", name="episode_comment_delete", methods={"DELETE"})
+     * @ParamConverter("episode", class="App\Entity\Episode", options={"mapping": {"slug": "slug"}})
+     * @ParamConverter("comment", class="App\Entity\Comment", options={"mapping": {"id": "id"}})
+     */
+    public function delete_comment(Request $request, Episode $episode, Comment $comment): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$comment->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($comment);
+            $entityManager->flush();
+        }
+        return $this->redirectToRoute('episode_show', [ 'slug' => $episode->getSlug()]);
+    }
     /**
      * @Route("/{slug}", name="episode_delete", methods={"DELETE"})
      */
