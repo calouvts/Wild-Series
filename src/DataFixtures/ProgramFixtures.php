@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use App\Entity\Program;
@@ -52,15 +53,18 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
 
     public function getDependencies()
     {
-        return [CategoryFixtures::class];
+        return [CategoryFixtures::class, UserFixtures::class];
     }
 
     public function load(ObjectManager $manager)
     {
+        $admin = $this->getReference('test_admin');
+
         $i = 0;
         foreach (self::PROGRAMS as $title => $data) {
             $program = new Program();
             $program->setTitle($title);
+            $program->setOwner($admin);
             $program->setSummary($data['summary']);
             $slug = $this->slugify->generate($program->getTitle());
             $program->setSlug($slug);
