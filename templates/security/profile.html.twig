@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+
+<p>    {{ app.user.email }} </p>
+
+    <a href="{{ path('program_index') }}"> retour à l'index </a>
+
+{% endblock %}
