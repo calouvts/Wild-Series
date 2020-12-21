@@ -146,6 +146,7 @@ class ProgramController extends AbstractController
         }
 
         return $this->render('program/edit.html.twig', [
+            'program' => $program,
             'form' => $form->createView(),
         ]);
     }
@@ -176,14 +177,15 @@ class ProgramController extends AbstractController
     }
 
     /**
-     * @Route("/{slug}", name="program_delete", methods={"DELETE"})
+     * @Route("/{slug}", name="delete", methods={"DELETE"})
      */
     public function delete(Request $request, Program $program): Response
     {
         if ($this->isCsrfTokenValid('delete'.$program->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
+            /*
             $entityManager->remove($program);
-            $entityManager->flush();
+            $entityManager->flush(); */
             $this->addFlash('danger', 'La série a bien été supprimée');
         }
 
