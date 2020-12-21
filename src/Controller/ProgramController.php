@@ -19,6 +19,7 @@ use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 
 /**
@@ -83,6 +84,7 @@ class ProgramController extends AbstractController
                 ->subject('Une nouvelle série vient d\'être publiée !')
                 ->html($this->renderView('program/newProgramEmail.html.twig', ['program' => $program]));
             $mailer->send($email);
+            $this->addFlash('success', 'La nouvelle série a bien été créée');
             return $this->redirectToRoute('program_index');
         }
         // Render the form
@@ -172,6 +174,23 @@ class ProgramController extends AbstractController
             'episode' => $episode,
         ]);
     }
+
+    /**
+     * @Route("/{slug}", name="program_delete", methods={"DELETE"})
+     */
+    public function delete(Request $request, Program $program): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$program->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($program);
+            $entityManager->flush();
+            $this->addFlash('danger', 'La série a bien été supprimée');
+        }
+
+        return $this->redirectToRoute('program_index');
+    }
+
+
 
 
 
