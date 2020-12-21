@@ -3,6 +3,9 @@
 {% block title %}All programs{% endblock %}
 
 {% block body %}
+
+    <a href="{{ path("program_new") }}">Ajouter une série</a>
+
     <h1>Toutes les séries de la table program : </h1>
 
     {{ form_start(form) }}

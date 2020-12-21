@@ -38,7 +38,7 @@ class SeasonController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($season);
             $entityManager->flush();
-
+            $this->addFlash('success', 'La nouvelle saison a bien été créée');
             return $this->redirectToRoute('season_index');
         }
 
@@ -68,7 +68,7 @@ class SeasonController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
+            $this->addFlash('success', 'La nouvelle saison a bien été créée');
             return $this->redirectToRoute('season_index');
         }
 
@@ -85,8 +85,12 @@ class SeasonController extends AbstractController
     {
         if ($this->isCsrfTokenValid('delete'.$season->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
+
             $entityManager->remove($season);
             $entityManager->flush();
+
+            $this->addFlash('danger', 'La saison a été supprimée');
+
         }
         return $this->redirectToRoute('season_index');
     }
