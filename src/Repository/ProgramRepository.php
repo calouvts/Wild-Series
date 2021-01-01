@@ -19,7 +19,7 @@ class ProgramRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Program::class);
     }
-    public function findLikeName(string $name)
+    public function findLikeName(string $name) :array
     {
         /*
         $queryBuilder = $this->createQueryBuilder('p')

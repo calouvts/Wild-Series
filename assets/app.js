@@ -23,4 +23,7 @@ $(document).ready(function() {
 });
 
 
-console.log('Hello Webpack Encore! Edit me in assets/app.js');
+console.log('Hello Webpack Encore! Edit me in assets/app.js ok');
+
+require('@fortawesome/fontawesome-free/css/all.min.css');
+require('@fortawesome/fontawesome-free/js/all.js');

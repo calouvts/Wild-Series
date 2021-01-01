@@ -11,6 +11,7 @@ use App\Form\ProgramType;
 use App\Form\SearchProgramFormType;
 use App\Repository\ProgramRepository;
 use App\Service\Slugify;
+use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -189,6 +190,56 @@ class ProgramController extends AbstractController
 
         return $this->redirectToRoute('program_index');
     }
+
+
+    /**
+     * @Route("/{id}/watchlist", name="watchlist", methods={"GET","POST"})
+     */
+    public function addToWatchlist(Request $request, Program $program, EntityManagerInterface $entityManager): Response
+    {
+
+        if ($this->getUser()->isInWatchList($program)) {
+
+            $this->getUser()->removeProgram($program);
+        }
+        else {
+            $this->getUser()->addProgram($program);
+
+        }
+        $entityManager->flush();
+
+        $monTableau = [
+          'isWatched' => $this->getUser()->isInWatchlist($program)
+        ];
+
+        $jsonified = $this->json($monTableau);
+
+        return $jsonified;
+        /*
+        return $this->json([
+            'isInWatchlist' => $this->getUser()->isInWatchlist($program)
+        ]);
+        */
+    }
+    /*
+    public function addToWatchlist(Request $request, Program $program, EntityManagerInterface
+    $entityManager): Response
+    {
+
+        if ($this->getUser()->isInWatchList($program)) {
+
+            $this->getUser()->removeProgram($program);
+        }
+        else {
+            $this->getUser()->addProgram($program);
+
+        }
+        $entityManager->flush();
+        return $this->redirectToRoute('program_show', ['slug' => $program->getSlug()]);
+
+    }
+    */
+
 
 
 
