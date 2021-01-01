@@ -34,3 +34,5 @@ https://www.loom.com/share/e9b44e61143c488faa1a9102e6fa2095 challenge 22
 
 https://www.loom.com/share/3077509d0c884904803bdad950959a93 challenge 23
 
+https://www.loom.com/share/434c19edb5774dd3b4bfa4af6efe432b challenge 24
+

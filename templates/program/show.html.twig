@@ -3,6 +3,7 @@
 
 {% block body %}
 
+
     <div class="media">
         <img class="align-self-start mr-3" src="{{program.poster}}" alt="{{ program.title }} poster">
         <div class="media-body">
@@ -37,6 +38,15 @@
         Retour à la liste des programmes
     </a>
 
+    <button id="watchlist">
+        <i id="watchlisticon" data-url="{{ path('program_watchlist',{'id':program.id}) }}" class="{{ app.user.isInWatchlist(program) ? 'fas' : 'far' }} fa-heart watchlist"></i>
 
+    </button>
 
 {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+            {{ encore_entry_script_tags('watchlist') }}
+
+        {% endblock %}
