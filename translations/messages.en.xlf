@@ -187,7 +187,11 @@
       </trans-unit>
       <trans-unit id="7bLNO3T" resname="category">
         <source>category</source>
-        <target>category</target>
+        <target>category</target>        
+      </trans-unit>
+      <trans-unit id="sugxDFt" resname="season.backtolist">
+        <source>season.backtolist</source>
+        <target>back to season list</target>
       </trans-unit>
     </body>
   </file>

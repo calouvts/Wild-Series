@@ -193,6 +193,11 @@
         <source>category</source>
         <target>categorie</target>
       </trans-unit>
+      <trans-unit id="sugxDFt" resname="season.backtolist">
+        <source>season.backtolist</source>
+        <target>retour à la liste</target>
+
+      </trans-unit>
     </body>
   </file>
 </xliff>
