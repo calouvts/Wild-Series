@@ -5,7 +5,7 @@
 
 
 {% block body %}
-    <a href="{{ path("episode_new") }}">Ajouter un épisode</a>
+    <a href="{{ path("episode_new") }}">{{ 'Add'|trans }}</a>
     <h1>Episode index</h1>
 
     <table class="table">
@@ -28,8 +28,8 @@
                 <td>{{ episode.number }}</td>
                 <td>{{ episode.synopsis }}</td>
                 <td>
-                    <a href="{{ path('episode_show', {'slug': episode.slug}) }}">show</a>
-                    <a href="{{ path('episode_edit', {'slug': episode.slug}) }}">edit</a>
+                    <a href="{{ path('episode_show', {'slug': episode.slug}) }}">{{ 'Detail'|trans }}</a>
+                    <a href="{{ path('episode_edit', {'slug': episode.slug}) }}">{{ 'Edit'|trans }}</a>
                 </td>
             </tr>
         {% else %}
@@ -40,5 +40,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('episode_new') }}">Create new</a>
+    <a href="{{ path('episode_new') }}">{{ 'Add'|trans }}</a>
 {% endblock %}

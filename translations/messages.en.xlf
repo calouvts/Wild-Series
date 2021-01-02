@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="KA1Eqx6" resname="welcome">
+        <source>welcome</source>
+        <target>Welcome</target>
+      </trans-unit>
+      <trans-unit id="fOYTaRP" resname="account.sign_in">
+        <source>account.sign_in</source>
+        <target>Sign In</target>
+      </trans-unit>
+      <trans-unit id="U1doKCM" resname="account.register">
+        <source>account.register</source>
+        <target>Create Account</target>
+      </trans-unit>
+      <trans-unit id="CDjx2ju" resname="hello_username">
+        <source>hello_username</source>
+        <target> %username%, welcome!</target>
+      </trans-unit>
+      <trans-unit id="Q7UTU9q" resname="account.logout">
+        <source>account.logout</source>
+        <target>Log out</target>
+      </trans-unit>
+      <trans-unit id="mvIRMps" resname="account">
+        <source>account</source>
+        <target>My account</target>
+      </trans-unit>
+      <trans-unit id="OnhpU4i" resname="Home">
+        <source>Home</source>
+        <target>Home</target>
+      </trans-unit>
+      <trans-unit id="tnRwZLK" resname="Programs">
+        <source>Programs</source>
+        <target>Programs</target>
+      </trans-unit>
+      <trans-unit id="wVUnsZu" resname="Seasons">
+        <source>Seasons</source>
+        <target>Seasons</target>
+      </trans-unit>
+      <trans-unit id="HvCgHK5" resname="Episods">
+        <source>Episods</source>
+        <target>Episods</target>
+      </trans-unit>
+      <trans-unit id="_waRj.e" resname="Actors">
+        <source>Actors</source>
+        <target>Actors</target>
+      </trans-unit>
+      <trans-unit id="8jz0q9f" resname="Favorits">
+        <source>Favorits</source>
+        <target>Favorits</target>
+      </trans-unit>
+      <trans-unit id="d2HycWt" resname="Add">
+        <source>Add</source>
+        <target>Add a new Program</target>
+      </trans-unit>
+      <trans-unit id="ScJmuqq" resname="Search">
+        <source>Search</source>
+        <target>Search</target>
+      </trans-unit>
+      <trans-unit id="rDLkoh1" resname="Detail">
+        <source>Detai</source>
+        <target>Detail Program</target>
+      </trans-unit>
+      <trans-unit id="WnuP8Bu" resname="Edit">
+        <source>Edit</source>
+        <target>Edit</target>
+      </trans-unit>
+      <trans-unit id="zrmtViS" resname="Back Home">
+        <source>Back</source>
+        <target>Back to Home</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

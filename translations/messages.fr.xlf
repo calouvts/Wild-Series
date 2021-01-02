@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="U1doKCM" resname="account.register">
+        <source>account.register</source>
+        <target>S'enregistrer</target>
+      </trans-unit>
+      <trans-unit id="KA1Eqx6" resname="welcome">
+        <source>welcome</source>
+        <target>Bienvenue</target>
+      </trans-unit>
+      <trans-unit id="fOYTaRP" resname="account.sign_in">
+        <source>account.sign_in</source>
+        <target>Se connecter</target>
+      </trans-unit>
+      <trans-unit id="CDjx2ju" resname="hello_username">
+        <source>hello_username</source>
+        <target>Bonjour %username%</target>
+      </trans-unit>
+      <trans-unit id="Q7UTU9q" resname="account.logout">
+        <source>account.logout</source>
+        <target>Se déconnecter</target>
+      </trans-unit>
+      <trans-unit id="mvIRMps" resname="account">
+        <source>account</source>
+        <target>Mon compte</target>
+      </trans-unit>
+      <trans-unit id="OnhpU4i" resname="Home">
+        <source>Home</source>
+        <target>Accueil</target>
+      </trans-unit>
+      <trans-unit id="tnRwZLK" resname="Programs">
+        <source>Programs</source>
+        <target>Séries</target>
+      </trans-unit>
+      <trans-unit id="wVUnsZu" resname="Seasons">
+        <source>Seasons</source>
+        <target>Saisons</target>
+      </trans-unit>
+      <trans-unit id="HvCgHK5" resname="Episods">
+        <source>Episods</source>
+        <target>Episodes</target>
+      </trans-unit>
+      <trans-unit id="_waRj.e" resname="Actors">
+        <source>Actors</source>
+        <target>Distributions</target>
+      </trans-unit>
+      <trans-unit id="8jz0q9f" resname="Favorits">
+        <source>Favorits</source>
+        <target>Préférences</target>
+      </trans-unit>
+      <trans-unit id="d2HycWt" resname="Add">
+        <source>Add</source>
+        <target>Ajouter un programme</target>
+      </trans-unit>
+      <trans-unit id="ScJmuqq" resname="Search">
+        <source>Search</source>
+        <target>Rechercher</target>
+      </trans-unit>
+      <trans-unit id="rDLkoh1" resname="Detail">
+        <source>Detail</source>
+        <target>Détails</target>
+      </trans-unit>
+      <trans-unit id="WnuP8Bu" resname="Edit">
+        <source>Edit</source>
+        <target>Modifier</target>
+      </trans-unit>
+      <trans-unit id="zrmtViS" resname="Back">
+        <source>Back</source>
+        <target>Retour à l'accueuil</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

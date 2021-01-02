@@ -13,32 +13,45 @@
             </a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto ">
-                    <li class="nav-item"><a class="nav-link text-white h4" href="#">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link text-white h4" href="#">{{ 'Home'|trans }}</a></li>
                              <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="{{ path('program_index') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Séries
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ path('program_index') }}">Liste des séries</a>
-                            <a class="dropdown-item" href="{{ path('season_index') }}">Liste des saisons</a>
-                            <a class="dropdown-item" href="{{ path('episode_index') }}">Liste des épisodes</a>
+                            <a class="dropdown-item" href="{{ path('program_index') }}">{{ 'Programs'|trans }}</a>
+                            <a class="dropdown-item" href="{{ path('season_index') }}">{{ 'Seasons'|trans }}</a>
+                            <a class="dropdown-item" href="{{ path('episode_index') }}">{{ 'Episods'|trans }}</a>
                         </div>
-                    <li class="nav-item"><a class="nav-link text-white h4" href="{{ path('actor_index') }}">Distribution</a></li>
-                    <li class="nav-item"><a class="nav-link text-white h4" href="/#">Favoris</a></li>
+                    <li class="nav-item"><a class="nav-link text-white h4" href="{{ path('actor_index') }}">{{ 'Actors'|trans }}</a></li>
+                    <li class="nav-item"><a class="nav-link text-white h4" href="/#">{{ 'Favorits'|trans }}</a></li>
                    </ul>
                 </ul>
             </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto ">
+                    <div>
+                        {% if app.request.locale == 'fr' %}
+                            <a class="dropdown-item text-light" href="{{ path(app.request.get("_route"), app.request.attributes.get('_route_params')|merge({'_locale':'en'})  ) }}">EN</a>
+                        {% else %}
+                            <a class="dropdown-item text-light" href="{{ path(app.request.get("_route"), app.request.attributes.get('_route_params')|merge({'_locale':'fr'})   ) }}">FR</a>
+                        {% endif %}
+                    </div>
+
+
+
                    <li class="nav-item"><a class="nav-link text-white" {% if app.user %}
-                        {{ app.user.email }}
-                        <a href="{{ path('app_logout') }}"> Se déconnecter</a>
-                           <a href="{{ path('user_profile') }}"> Mon compte</a>
+                           <i>
+                               {% trans with {'%username%': app.user.email} %}
+                                   hello_username
+                               {% endtrans %} !
+                           </i>
+                        <a href="{{ path('app_logout') }}"> {{ 'account.logout'|trans }}</a>
+                           <a href="{{ path('user_profile') }}"> {{ 'account'|trans }}</a>
 
                     {% else %}
-                        <a href="{{ path('app_login') }}"> Se connecter</a>
+                        <a href="{{ path('app_login') }}"> {{ 'account.sign_in'|trans }}</a>
                     {% endif %}
-
                 </ul>
             </div>
         </nav>

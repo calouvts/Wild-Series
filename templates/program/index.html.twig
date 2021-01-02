@@ -4,7 +4,7 @@
 
 {% block body %}
 
-    <a href="{{ path("program_new") }}">Ajouter une série</a>
+    <a href="{{ path("program_new") }}">{{ 'Add'|trans }}</a>
 
     <h1>Toutes les séries de la table program : </h1>
 
@@ -12,16 +12,16 @@
 
     {{ form_widget(form) }}
 
-    <button>Search</button>
+    <button>{{ 'Search'|trans }}</button>
 
     {{ form_end(form) }}
     {% for program in programs %}
         <div>
             <h2>{{ loop.index }} / {{ program.title }} - Catégorie : {{ program.category.name }}</h2>
             <p>{{ program.summary }}</p>
-            <a href="{{ path("program_show", { slug: program.slug }) }}">Voir la fiche</a>
+            <a href="{{ path("program_show", { slug: program.slug }) }}">{{ 'Detail'|trans }}</a>
             {% if is_granted("ROLE_ADMIN") %}
-                <a href="{{ path('program_edit', { 'slug': program.slug} ) }}">Éditer</a>
+                <a href="{{ path('program_edit', { 'slug': program.slug} ) }}">{{ 'Edit'|trans }}</a>
             {%endif%}
         </div>
     {% else %}
@@ -29,7 +29,7 @@
     {% endfor %}
 
     <a href="{{ path('app_index') }}">
-        Retour à l'accueil
+        {{ 'Back Home'|trans }}
     </a>
 {% endblock %}
 
