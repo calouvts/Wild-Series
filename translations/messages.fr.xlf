@@ -189,9 +189,14 @@
         <source>season.list</source>
         <target>Liste des saisons</target>
       </trans-unit>
+      <trans-unit id="7bLNO3T" resname="category">
+        <source>category</source>
+        <target>categorie</target>
+      </trans-unit>
       <trans-unit id="sugxDFt" resname="season.backtolist">
         <source>season.backtolist</source>
         <target>retour à la liste</target>
+
       </trans-unit>
     </body>
   </file>
