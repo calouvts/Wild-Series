@@ -185,6 +185,10 @@
         <source>season.list</source>
         <target>Season list</target>
       </trans-unit>
+      <trans-unit id="sugxDFt" resname="season.backtolist">
+        <source>season.backtolist</source>
+        <target>back to season list</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
