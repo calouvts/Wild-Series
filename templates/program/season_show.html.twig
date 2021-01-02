@@ -8,18 +8,18 @@
         <div class="media-body">
             <h1 class="mt-0"><a href="../../">{{ program.title }}</a> (season {{  season.number }} )</h1>
             <p>{{ program.summary }}</p>
-            <p>Catégorie : {{ program.category.name }}</p>
+            <p>{{ 'program.category' |trans}} : {{ program.category.name }}</p>
             {% for episode in episodes %}
 
                 <div class="media-body">
                     <h1 class="mt-0"> Episode {{ episode.number }} : {{ episode.title }}</h1>
 
-                    <a href="{{ path('episode_show', {'slug': episode.slug}) }}">voir le détail</a>
+                    <a href="{{ path('episode_show', {'slug': episode.slug}) }}">{{'seedetail'|trans}}</a>
                     <p>Synopsis: {{ episode.synopsis }}</p>
                 </div>
 
             {% else %}
-                Aucune information sur la saison
+                {{ 'season.noinfoonseason'|trans }}
             {% endfor %}
         </div>
     </div>

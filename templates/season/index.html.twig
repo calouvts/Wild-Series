@@ -5,17 +5,17 @@
 
 
 {% block body %}
-    <a href="{{ path("season_new") }}">Ajouter une saison</a>
-    <h1>Season index</h1>
+    <a href="{{ path("season_new") }}">{{ 'Add'|trans }}</a>
+<h1>{{ 'season.list' |trans }}</h1>
 
     <table class="table">
         <thead class = "seasontext">
             <tr>
                 <th>Id</th>
-                <th>Title</th>
-                <th>Number</th>
-                <th>Year</th>
-                <th>Description</th>
+                <th>{{ 'season.title'|trans }}</th>
+                <th>{{ 'season.number'|trans }}</th>
+                <th>{{ 'season.year'|trans }}</th>
+                <th>{{ 'season.description'|trans }}</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -28,17 +28,17 @@
                 <td>{{ season.year }}</td>
                 <td>{{ season.description }}</td>
                 <td>
-                    <a href="{{ path('season_show', {'id': season.id}) }}">show</a>
-                    <a href="{{ path('season_edit', {'id': season.id}) }}">edit</a>
+                    <a href="{{ path('season_show', {'id': season.id}) }}">{{ 'Detail'|trans }}</a>
+                    <a href="{{ path('season_edit', {'id': season.id}) }}">{{ 'Edit'|trans }}</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">{{ 'norecordfound'|trans }}</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('season_new') }}">Create new</a>
+    <a href="{{ path('season_new') }}">{{ 'Add'|trans }}/a>
 {% endblock %}

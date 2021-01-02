@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Season{% endblock %}
+{% block title %}{{ 'season.new'|trans }}{% endblock %}
 
 {% block body %}
-    <h1>Create new Season</h1>
+    <h1>{{ 'season.new'|trans }}</h1>
 
     {{ include('season/_form.html.twig') }}
 
