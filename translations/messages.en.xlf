@@ -185,6 +185,10 @@
         <source>season.list</source>
         <target>Season list</target>
       </trans-unit>
+      <trans-unit id="7bLNO3T" resname="category">
+        <source>category</source>
+        <target>category</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

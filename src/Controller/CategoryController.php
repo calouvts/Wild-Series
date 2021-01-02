@@ -87,13 +87,10 @@ class CategoryController extends \Symfony\Bundle\FrameworkBundle\Controller\Abst
                 ['id' => 'DESC'],
                 3);
 
-        if (!$programs) {
-            throw $this->createNotFoundException(
-                'No program in '.$categoryName.' .'
-            );
-        }
+
 
         return $this->render('category/show.html.twig', [
+            'category' => $category,
             'programs' => $programs,
         ]);
     }
