@@ -9,11 +9,11 @@
         <div class="media-body">
             <h1 class="mt-0">{{ program.title }}</h1>
             <p>{{ program.summary }}</p>
-            <p>Catégorie : {{ program.category.name }}</p>
+            <p>{{ 'program.category'|trans }} : {{ program.category.name }}</p>
             {% for season in seasons %}
 
                     <div class="media-body">
-                        <h1 class="mt-0">SAISON {{ season.number }}</h1>
+                        <h1 class="mt-0">{{ 'SEASON'|trans   }} {{ season.number }}</h1>
                         <p>{{ season.year }}</p>
                         <p>{{ season.description }}</p>
                      <a href="seasons/{{ season.id }}">Voir le détail</a>
@@ -35,12 +35,12 @@
     </ul>
 
     <a href="{{ path('program_index') }}">
-        Retour à la liste des programmes
+        {{ 'program.backtolist'|trans }}
     </a>
-
+{%  if app.user %}
     <button id="watchlist">
         <i id="watchlisticon" data-url="{{ path('program_watchlist',{'id':program.id}) }}" class="{{ app.user.isInWatchlist(program) ? 'fas' : 'far' }} fa-heart watchlist"></i>
-
+{% endif %}
     </button>
 
 {% endblock %}

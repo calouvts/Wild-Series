@@ -13,11 +13,11 @@
                 <td>{{ episode.id }}</td>
             </tr>
             <tr>
-                <th>Title</th>
+                <th>{{ 'episode.title'|trans }}</th>
                 <td>{{ episode.title }}</td>
             </tr>
             <tr>
-                <th>Number</th>
+                <th>{{ 'episode.number'|trans }}</th>
                 <td>{{ episode.number }}</td>
             </tr>
             <tr>
@@ -27,7 +27,7 @@
         </tbody>
     </table>
 
-    <a href="{{ path('episode_index') }}">back to list</a>
+    <a href="{{ path('episode_index') }}">{{ 'episode.backtolist'|trans }}</a>
 
     <a href="edit">edit</a>
 
@@ -44,7 +44,7 @@
                 <form method="post" action="{{ path('episode_comment_delete', {'slug': episode.slug, 'id' : comment.id}) }}" onsubmit="return confirm('Are you sure you want to delete this comment?');">
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ comment.id) }}">
-                    <button class="btn btn-dark">Delete</button>
+                    <button class="btn btn-dark">{{ 'delcomment'|trans }}</button>
                 </form>
                 {% endif %}
 
@@ -52,7 +52,7 @@
         {% endfor %}
     </ul>
     {% if is_granted('ROLE_CONTRIBUTOR') %}
-            <h3>Ajouter un commentaire</h3>
+            <h3>{{ 'addcomment'|trans }}</h3>
             {{ include('episode/_form.html.twig') }}
     {% endif %}
 

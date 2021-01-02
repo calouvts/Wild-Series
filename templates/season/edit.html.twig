@@ -5,9 +5,9 @@
 {% block body %}
     <h1>Edit Season</h1>
 
-    {{ include('season/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('season/_form.html.twig', {'button_label': 'form.update'|trans}) }}
 
-    <a href="{{ path('season_index') }}">back to list</a>
+    <a href="{{ path('season_index') }}">{{ 'form.backtolist'|trans }}</a>
 
     {{ include('season/_delete_form.html.twig') }}
 {% endblock %}

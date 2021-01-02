@@ -6,15 +6,15 @@
 
 {% block body %}
     <a href="{{ path("episode_new") }}">{{ 'Add'|trans }}</a>
-    <h1>Episode index</h1>
+    <h1>{{ 'episode.list' |trans }}</h1>
 
     <table class="table">
         <thead class = "seasontext">
             <tr>
                 <th>Id</th>
-                <th>Série</th>
-                <th>Title</th>
-                <th>Number</th>
+                <th>{{ 'episode.program'|trans }}</th>
+                <th>{{ 'episode.title'|trans }}</th>
+                <th>{{ 'episode.number'|trans }}</th>
                 <th>Synopsis</th>
                 <th>actions</th>
             </tr>

@@ -53,7 +53,7 @@
         <source>Favorits</source>
         <target>Préférences</target>
       </trans-unit>
-      <trans-unit id="d2HycWt" resname="Add">
+      <trans-unit id="n9coxmy" resname="Add">
         <source>Add</source>
         <target>Ajouter un programme</target>
       </trans-unit>
@@ -61,17 +61,133 @@
         <source>Search</source>
         <target>Rechercher</target>
       </trans-unit>
-      <trans-unit id="rDLkoh1" resname="Detail">
+      <trans-unit id="_18n1UV" resname="Detail">
         <source>Detail</source>
         <target>Détails</target>
       </trans-unit>
-      <trans-unit id="WnuP8Bu" resname="Edit">
+      <trans-unit id="RkxP.QG" resname="Edit">
         <source>Edit</source>
         <target>Modifier</target>
       </trans-unit>
-      <trans-unit id="zrmtViS" resname="Back">
+      <trans-unit id="dpAPG.0" resname="Back">
         <source>Back</source>
         <target>Retour à l'accueuil</target>
+      </trans-unit>
+      <trans-unit id="XohImNo" resname="password">
+        <source>password</source>
+        <target>mot de passe</target>
+      </trans-unit>
+      <trans-unit id="zrmtViS" resname="Back Home">
+        <source>Back Home</source>
+        <target>Retour accueil</target>
+      </trans-unit>
+      <trans-unit id="s03Ul8E" resname="account.proposecreate">
+        <source>account.proposecreate</source>
+        <target>Vous n'avez pas de compte? Vous pouvez vous enregistrer!</target>
+      </trans-unit>
+      <trans-unit id="Iaym7Zq" resname="agreeterms">
+        <source>agreeterms</source>
+        <target>J'accepte les termes et conditions</target>
+      </trans-unit>
+      <trans-unit id="Ci3qibM" resname="form.save">
+        <source>form.save</source>
+        <target>Enregistrer</target>
+      </trans-unit>
+      <trans-unit id="CUOoQQb" resname="form.backtolist">
+        <source>form.backtolist</source>
+        <target>retour à la liste</target>
+      </trans-unit>
+      <trans-unit id="kuafH.x" resname="program.category">
+        <source>program.category</source>
+        <target>Categorie</target>
+      </trans-unit>
+      <trans-unit id="ZUtjqDu" resname="form.delete">
+        <source>form.delete</source>
+        <target>Supprimer</target>
+      </trans-unit>
+      <trans-unit id="Vjx6uRW" resname="SEASON">
+        <source>SEASON</source>
+        <target>SAISON</target>
+      </trans-unit>
+      <trans-unit id="H3qBC0l" resname="program.backtolist">
+        <source>program.backtolist</source>
+        <target>retour à la liste</target>
+      </trans-unit>
+      <trans-unit id="eU0z_qx" resname="seedetail">
+        <source>seedetail</source>
+        <target>voir détails</target>
+      </trans-unit>
+      <trans-unit id="dVLgw6t" resname="season.noinfoonseason">
+        <source>season.noinfoonseason</source>
+        <target>aucune info sur la saison</target>
+      </trans-unit>
+      <trans-unit id="bgD9EK8" resname="form.update">
+        <source>form.update</source>
+        <target>Mettre à jour</target>
+      </trans-unit>
+      <trans-unit id="vC9zevh" resname="episode.new">
+        <source>episode.new</source>
+        <target>Nouvel épisode</target>
+      </trans-unit>
+      <trans-unit id="kd1RTIn" resname="episode.backtolist">
+        <source>episode.backtolist</source>
+        <target>retour à la liste</target>
+      </trans-unit>
+      <trans-unit id="gFQ2BpO" resname="episode.program">
+        <source>episode.program</source>
+        <target>Série</target>
+      </trans-unit>
+      <trans-unit id="0LJwUvf" resname="episode.title">
+        <source>episode.title</source>
+        <target>Titre</target>
+      </trans-unit>
+      <trans-unit id="eH9LBPJ" resname="episode.number">
+        <source>episode.number</source>
+        <target>Numéro</target>
+      </trans-unit>
+      <trans-unit id="P8qOu5r" resname="delcomment">
+        <source>delcomment</source>
+        <target>Effacer commentaire</target>
+      </trans-unit>
+      <trans-unit id="YMjRctY" resname="addcomment">
+        <source>addcomment</source>
+        <target>Ajouter commentaire</target>
+      </trans-unit>
+      <trans-unit id="Yu2FM2o" resname="season.new">
+        <source>season.new</source>
+        <target>Nouvelle saison</target>
+      </trans-unit>
+      <trans-unit id="FkmZb.O" resname="season.title">
+        <source>season.title</source>
+        <target>Titre</target>
+      </trans-unit>
+      <trans-unit id="7GGhqsb" resname="season.number">
+        <source>season.number</source>
+        <target>Numéro</target>
+      </trans-unit>
+      <trans-unit id="QfLtr5j" resname="season.year">
+        <source>season.year</source>
+        <target>Année</target>
+      </trans-unit>
+      <trans-unit id="t2HZ5WP" resname="season.description">
+        <source>season.description</source>
+        <target>Description</target>
+      </trans-unit>
+      <trans-unit id="ubjjtKp" resname="norecordfound">
+        <source>norecordfound</source>
+        <target>Aucune info trouvée</target>
+      </trans-unit>
+      <trans-unit id="kPOd4uX" resname="program.list">
+        <source>program.list</source>
+        <target>Liste des séries</target>
+      </trans-unit>
+      <trans-unit id="mjN9ZoQ" resname="episode.list">
+        <source>episode.list</source>
+        <target>Liste des épisodes</target>
+      </trans-unit>
+      <trans-unit id="8k4i8TO" resname="season.list">
+        <source>season.list</source>
+        <target>Liste des saisons</target>
       </trans-unit>
     </body>
   </file>
