@@ -8,11 +8,15 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
-
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
+use DateTime;
 
 
 /**
  * @ORM\Entity(repositoryClass=ProgramRepository::class)
+ * //On précise à l’entité que nous utiliserons l’upload du package Vich uploader
+ * @Vich\Uploadable
  * @UniqueEntity(
  *     fields={"title"},
  *     message="La série est déjà existante"
@@ -47,6 +51,17 @@ class Program
      */
     private $poster;
 
+    //On va créer un nouvel attribut à notre entité, qui ne sera pas lié à une colonne
+    // Tu peux d’ailleurs voir que l’annotation ORM column n’est pas spécifiée car
+    //On ne rajoute pas de données de type file en bdd
+
+    /**
+     * @Vich\UploadableField(mapping="poster_file", fileNameProperty="poster")
+     * @var File
+     */
+
+    private ?File $posterFile;
+
     /**
      * @ORM\ManyToOne(targetEntity=Category::class)
      * @ORM\JoinColumn(nullable=false)
@@ -73,6 +88,11 @@ class Program
      */
     private $owner;
 
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $uploadedAt;
+
     public function __construct()
     {
         $this->seasons = new ArrayCollection();
@@ -92,7 +112,6 @@ class Program
     public function setTitle(string $title): self
     {
         $this->title = $title;
-
         return $this;
     }
 
@@ -212,4 +231,34 @@ class Program
 
         return $this;
     }
+    public function setPosterFile(File $image = null):Program
+
+    {
+        $this->posterFile = $image;
+        if ($image) {
+            $this->uploadedAt = new DateTime('now');
+        }
+        return $this;
+    }
+
+
+    public function getPosterFile(): ?File
+
+    {
+        return $this->posterFile;
+    }
+
+    public function getUploadedAt(): ?\DateTimeInterface
+    {
+        return $this->uploadedAt;
+    }
+
+    public function setUploadedAt(?\DateTimeInterface $uploadedAt): self
+    {
+        $this->uploadedAt = $uploadedAt;
+
+        return $this;
+    }
+
+
 }
