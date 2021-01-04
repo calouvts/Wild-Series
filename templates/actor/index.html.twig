@@ -3,6 +3,7 @@
 {% block title %}Actor{% endblock %}
 
 {% block body %}
+<a href="{{ path("actor_new") }}">{{ 'Add_actor'|trans }}</a>
     <h1>Liste des acteurs : </h1>
 {% for actor in actors %}
 
