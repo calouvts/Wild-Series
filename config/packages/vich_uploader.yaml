@@ -10,3 +10,9 @@ vich_uploader:
             upload_destination: '%upload_directory%'
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer # or any other namer listed above
 
+        picture_file:
+            # alias qui nous permet d'accéder à nos images depuis le navigateur
+            uri_prefix: /images/picture
+            # Chemin vers le dossier de stockage
+            upload_destination: '%upload_directory%'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer # or any other namer listed above
